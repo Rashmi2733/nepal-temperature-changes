@@ -15,13 +15,13 @@ st.title("Temperature of Nepal: 1940 - 2024")
 #Getting the data
 df_monthly_temp = pd.read_csv(r"year_monthly_temp_1940_2024.csv")
 
-#Adding a dropdown to select the years to display on the chart
+# #Adding a dropdown to select the years to display on the chart
 years = sorted(df_monthly_temp['year'].unique())
-selected_years = st.multiselect(
-    "Select years to display or remove from the graph:",
-    options=years,
-    default=years  # showing all years at the start
-)
+# selected_years = st.multiselect(
+#     "Select years to display or remove from the graph:",
+#     options=years,
+#     default=years  # showing all years at the start
+# )
 
 #Starting by initializing plotly figure to add parts to
 fig1 = go.Figure()
@@ -31,12 +31,12 @@ month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oc
 
 #Lines for older years and making them all grey (1940–2019)
 prev_years_0 = list(range(1940, 2020))
-prev_years = []
+# prev_years = []
 
-for i in prev_years_0:
-    if i in selected_years:
-        prev_years.append(i)
-for i, year in enumerate(sorted(prev_years)):
+# for i in prev_years_0:
+#     if i in selected_years:
+#         prev_years.append(i)
+for i, year in enumerate(sorted(prev_years_0)):
     #For each year, getting the 12 month temperatures
     yearly_data = df_monthly_temp[df_monthly_temp['year'] == year]
     #Getting actual months instead of numbers from 1-12
@@ -64,13 +64,13 @@ for i, year in enumerate(sorted(prev_years)):
 
 new_years_0 = [2020, 2021, 2022, 2023]
 
-new_years = []
+# new_years = []
 
-for i in new_years_0:
-    if i in selected_years:
-        new_years.append(i)
+# for i in new_years_0:
+#     if i in selected_years:
+#         new_years.append(i)
 new_colors = {2020: "red", 2021: "blue", 2022: "green", 2023: "orange"}
-for year in new_years:
+for year in new_years_0:
     yearly_data = df_monthly_temp[df_monthly_temp['year'] == year]
     months = [month_names[m-1] for m in yearly_data['month']]
     temperature = yearly_data['monthly_temperature_C']
@@ -89,24 +89,24 @@ for year in new_years:
     ))
 
 #Line for most recent year 2024, making it bold and black
-if 2024 in selected_years:
-    year = 2024
-    yearly_data = df_monthly_temp[df_monthly_temp['year'] == year]
-    months = [month_names[m-1] for m in yearly_data['month']]
-    temperature = yearly_data['monthly_temperature_C']
+# if 2024 in selected_years:
+year = 2024
+yearly_data = df_monthly_temp[df_monthly_temp['year'] == year]
+months = [month_names[m-1] for m in yearly_data['month']]
+temperature = yearly_data['monthly_temperature_C']
 
-    fig1.add_trace(go.Scatter(
-        x = months, y = temperature,
-        mode = 'lines',
-        line = dict(dash = 'longdash', width = 8, color = 'black'),
-        opacity = 0.9,
-        name = str(year),
-        hovertemplate=
-                '<b>Year:</b> %{text}<br>' +
-                '<b>Month:</b> %{x}<br>' +
-                '<b>Temp:</b> %{y:.2f} °C<extra></extra>',
-            text=[str(year)] * len(months) 
-    ))
+fig1.add_trace(go.Scatter(
+    x = months, y = temperature,
+    mode = 'lines',
+    line = dict(dash = 'longdash', width = 8, color = 'black'),
+    opacity = 0.9,
+    name = str(year),
+    hovertemplate=
+            '<b>Year:</b> %{text}<br>' +
+            '<b>Month:</b> %{x}<br>' +
+            '<b>Temp:</b> %{y:.2f} °C<extra></extra>',
+        text=[str(year)] * len(months) 
+))
 
 #Overall layout for the graph
 fig1.update_layout(
@@ -124,6 +124,15 @@ fig1.update_layout(
     ),
     legend=dict(
         title="Year",
+        orientation = "h",
+        yanchor = "bottom",
+        y = 0.01,
+        xanchor = "right",
+        x = 0.999,
+        title_font=dict(size=18, family="Calibri", color="black"), 
+        font=dict(size=16, family="Calibri", color="black"),
+            bordercolor = "Black",
+            borderwidth = 2 
         title_font=dict(size=18, family="Calibri", color="black"), 
         font=dict(size=16, family="Calibri", color="black")      
     ),
