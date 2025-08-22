@@ -109,21 +109,21 @@ if 2024 in selected_years:
 #Overall layout for the graph
 fig1.update_layout(
     title="Monthly Temperature of Nepal (1940 to 2024)",
-    title_font=dict(size=24, family="Calibri", color="black", weight = 'bold'),  # bold title
+    title_font=dict(size=24, family="Calibri", color="black"),  
     xaxis=dict(
         title="Month",
-        title_font=dict(size=22, family="Calibri", color="black", weight = 'bold'),  # bold axis label
-        tickfont=dict(size=18, family="Calibri", color="black", weight = 'bold')     # bold ticks
+        title_font=dict(size=22, family="Calibri", color="black"),  
+        tickfont=dict(size=18, family="Calibri", color="black")     
     ),
     yaxis=dict(
         title="Temperature (°C)",
-        title_font=dict(size=22, family="Calibri", color="black", weight = 'bold'),  # bold axis label
-        tickfont=dict(size=18, family="Calibri", color="black", weight = 'bold')     # bold ticks
+        title_font=dict(size=22, family="Calibri", color="black"),  
+        tickfont=dict(size=18, family="Calibri", color="black")     
     ),
     legend=dict(
         title="Year",
-        title_font=dict(size=18, family="Calibri", color="black", weight = 'bold'), # bold legend title
-        font=dict(size=16, family="Calibri", color="black", weight = 'bold')        # bold legend items
+        title_font=dict(size=18, family="Calibri", color="black"), 
+        font=dict(size=16, family="Calibri", color="black")      
     ),
     template="plotly_white",
     width=1400, height=750
@@ -191,16 +191,16 @@ for _, row in decade_avg.iterrows():
 #Overall layout for the graph
 fig2.update_layout(
     title = "Temperature of Nepal (1940 to 2024) with Average Temperature for Different Decades",
-    title_font = dict(size = 24, family = "Calibri", color = "black", weight  =  'bold'),  
+    title_font = dict(size = 24, family = "Calibri", color = "black"),  
     xaxis = dict(
         title = "Year",
-        title_font = dict(size = 22, family = "Calibri", color = "black", weight  =  'bold'),  
-        tickfont = dict(size = 18, family = "Calibri", color = "black", weight  =  'bold')
+        title_font = dict(size = 22, family = "Calibri", color = "black"),  
+        tickfont = dict(size = 18, family = "Calibri", color = "black")
     ),
     yaxis = dict(
         title = "Temperature (°C)",
-        title_font = dict(size = 22, family = "Calibri", color = "black", weight  =  'bold'), 
-        tickfont = dict(size = 18, family = "Calibri", color = "black", weight  =  'bold')     
+        title_font = dict(size = 22, family = "Calibri", color = "black"), 
+        tickfont = dict(size = 18, family = "Calibri", color = "black")     
     ),
     legend = dict(
         # title = "Legend",
@@ -209,8 +209,8 @@ fig2.update_layout(
         y = 0.01,
         xanchor = "right",
         x = 0.999,
-        # title_font = dict(size = 14, family = "Calibri", color = "black", weight  =  'bold'), 
-        font = dict(size = 12, family = "Calibri", color = "black", weight  =  'bold'),       
+        # title_font = dict(size = 14, family = "Calibri", color = "black"), 
+        font = dict(size = 12, family = "Calibri", color = "black"),       
     bordercolor = "Black",
     borderwidth = 2
     ),
@@ -289,16 +289,16 @@ fig3.add_trace(go.Scatter(
 #Overall layout for the graph
 fig3.update_layout(
     title = "Annual Average Temperature of Nepal (1940 to 2024) with Trend Line",
-    title_font = dict(size = 24, family = "Calibri", color = "black", weight  =  'bold'),  
+    title_font = dict(size = 24, family = "Calibri", color = "black"),  
     xaxis = dict(
         title = "Year",
-        title_font = dict(size = 22, family = "Calibri", color = "black", weight  =  'bold'),  
-        tickfont = dict(size = 18, family = "Calibri", color = "black", weight  =  'bold')
+        title_font = dict(size = 22, family = "Calibri", color = "black"),  
+        tickfont = dict(size = 18, family = "Calibri", color = "black")
     ),
     yaxis = dict(
         title = "Temperature (°C)",
-        title_font = dict(size = 22, family = "Calibri", color = "black", weight  =  'bold'), 
-        tickfont = dict(size = 18, family = "Calibri", color = "black", weight  =  'bold')     
+        title_font = dict(size = 22, family = "Calibri", color = "black"), 
+        tickfont = dict(size = 18, family = "Calibri", color = "black")     
     ),
     legend = dict(
         # title = "Legend",
@@ -307,8 +307,8 @@ fig3.update_layout(
         y = 0.01,
         xanchor = "right",
         x = 0.999,
-        title_font = dict(size = 18, family = "Calibri", color = "black", weight  =  'bold'), 
-        font = dict(size = 16, family = "Calibri", color = "black", weight  =  'bold'),       
+        title_font = dict(size = 18, family = "Calibri", color = "black"), 
+        font = dict(size = 16, family = "Calibri", color = "black"),       
     bordercolor = "Black",
     borderwidth = 2
     ),
