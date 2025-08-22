@@ -16,9 +16,9 @@ df_monthly_temp = pd.read_csv(r"year_monthly_temp_1940_2024.csv")
 #Adding a dropdown to select the years to display on the chart
 years = sorted(df_monthly_temp['year'].unique())
 selected_years = st.multiselect(
-    "Select year(s) to display",
+    "Select years to display on graph:",
     options=years,
-    default=[2020, 2021, 2022, 2023, 2024]  # show all years at start
+    default=[1940, 1945, 1967, 2020, 2021, 2022, 2023, 2024]  # show few years at the start
 )
 
 #Starting by initializing plotly figure to add parts to
