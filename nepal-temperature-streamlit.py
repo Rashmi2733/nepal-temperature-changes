@@ -6,11 +6,28 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import streamlit as st
 from scipy.stats import linregress
+import time
 
 #Setting the layout of streamlit to wide
 st.set_page_config(layout="wide")
 
 st.title("Temperature of Nepal: 1940 - 2024")
+
+#Showing loading message before graphs are shown
+loading_placeholder = st.empty()
+loading_placeholder.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='https://imgur.com/i40sfhj.gif' width='250'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+time.sleep(3)
+
+#Removing loading message once charts load
+loading_placeholder.empty()
+
 
 #Getting the data
 df_monthly_temp = pd.read_csv(r"year_monthly_temp_1940_2024.csv")
