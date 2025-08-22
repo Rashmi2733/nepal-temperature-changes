@@ -10,8 +10,7 @@ from scipy.stats import linregress
 #Setting the layout of streamlit to wide
 st.set_page_config(layout="wide")
 
-st.title("Temperature of Nepal")
-st.title("1940 - 2024")
+st.title("Temperature of Nepal: 1940 - 2024")
 
 #Getting the data
 df_monthly_temp = pd.read_csv(r"year_monthly_temp_1940_2024.csv")
