@@ -132,9 +132,7 @@ fig1.update_layout(
         title_font=dict(size=18, family="Calibri", color="black"), 
         font=dict(size=16, family="Calibri", color="black"),
             bordercolor = "Black",
-            borderwidth = 2 
-        title_font=dict(size=18, family="Calibri", color="black"), 
-        font=dict(size=16, family="Calibri", color="black")      
+            borderwidth = 2       
     ),
     template="plotly_white",
     width=1400, height=750
