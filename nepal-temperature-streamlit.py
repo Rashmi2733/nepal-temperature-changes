@@ -216,7 +216,7 @@ for _, row in decade_avg.iterrows():
 
 #Overall layout for the graph
 fig2.update_layout(
-    title = "Temperature (1940 to 2024) with Average Temperature for Different Decades",
+    title = "Temperature (1940 to 2024) with Average Values for Different Decades",
     title_font = dict(size = 24, family = "Calibri", color = "black"),  
     xaxis = dict(
         title = "Year",
