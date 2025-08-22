@@ -110,7 +110,7 @@ fig1.add_trace(go.Scatter(
 
 #Overall layout for the graph
 fig1.update_layout(
-    title="Monthly Temperature of Nepal (1940 to 2024)",
+    title="Monthly Temperature (1940 to 2024)",
     title_font=dict(size=24, family="Calibri", color="black"),  
     xaxis=dict(
         title="Month",
@@ -156,7 +156,7 @@ decade_avg = df_monthly_temp.groupby('decade')['monthly_temperature_C'].mean().r
 # Create a "date" for the middle of the decade to plot the line smoothly
 decade_avg['decade_date'] = pd.to_datetime(decade_avg['decade'].astype(str) + "-01-01")
 
-
+st.write("-------")
 
 #Plotting a graph that shows the temperatures for each month from 1940 to 2024 in a single time series along with decade averages
 
@@ -199,7 +199,7 @@ for _, row in decade_avg.iterrows():
 
 #Overall layout for the graph
 fig2.update_layout(
-    title = "Temperature of Nepal (1940 to 2024) with Average Temperature for Different Decades",
+    title = "Temperature (1940 to 2024) with Average Temperature for Different Decades",
     title_font = dict(size = 24, family = "Calibri", color = "black"),  
     xaxis = dict(
         title = "Year",
@@ -254,6 +254,8 @@ slope, intercept, r_value, p_value, std_err = linregress(years, temp)
 trend_line = slope * years + intercept
 
 
+st.write("-------")
+
 #Plotting a graph that shows the annual temperatures from 1940 to 2024 and trend line 
 
 fig3 = go.Figure()
@@ -297,7 +299,7 @@ fig3.add_trace(go.Scatter(
 
 #Overall layout for the graph
 fig3.update_layout(
-    title = "Annual Average Temperature of Nepal (1940 to 2024) with Trend Line",
+    title = "Annual Average Temperature (1940 to 2024) with Trend Line",
     title_font = dict(size = 24, family = "Calibri", color = "black"),  
     xaxis = dict(
         title = "Year",
